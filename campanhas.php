@@ -1,19 +1,19 @@
 <?php
 /**
-* CRUD PDO - CAMPANHAS - 22/09/2018 - 01:31
+* CRUD PDO - CAMPANHAS - 17/09/2018 - 01:31
 * Rogério Mário
 */
 // GLOBAL INFORMAÇÕES
-global $current_user;
-$current_user = wp_get_current_user();
-$user_info = get_userdata($current_user->ID);
-$first_name = $user_info->first_name;
-$last_name = $user_info->last_name;
-$user_adm = $user_info->user_adm;
-$user_id = $user_info->ID;
-$user_login = $user_info->user_login;
-$hoje = date('d-m-y');
-$agora = date('H:i:s' , time());
+    global $current_user;
+    $current_user = wp_get_current_user();
+    $user_info = get_userdata($current_user->ID);
+    $first_name = $user_info->first_name;
+    $last_name = $user_info->last_name;
+    $user_adm = $user_info->user_adm;
+    $user_id = $user_info->ID;
+    $user_login = $user_info->user_login;
+    $hoje = date('d-m-y');
+    $agora = date('H:i:s' , time());
 
 // Verificar se foi enviando dados via POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -269,7 +269,7 @@ if (isset($_REQUEST["act"]) && $_REQUEST["act"] == "del" && $id != "") {
 }
 ?>
 
-<table id="campanhas" class="table" width="100%">
+<table id="campanhas" class="table" width=100%>
   <thead style="background:#f8f8f8!important; color: #222!important">
     <tr>
       <th>ID
