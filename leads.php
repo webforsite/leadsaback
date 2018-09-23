@@ -3,12 +3,15 @@
 * CRUD PDO - Meus Leads - 23/09/2018 - 02:51
 * Rogério Mário
 */
-// GLOBAL INFORMAÇÕES
-//permissões para visualizar a página
-$user = wp_get_current_user();
+
+//PERMISSÕES PARA VISUALIZAR PÁGINA
  if(in_array( 'gerente', (array) $user->roles))
  {header('location: /app/'); exit;}
- // fim das permissões
+ 
+# fim permissão
+
+// GLOBAL INFORMAÇÕES
+$user = wp_get_current_user();
 global $current_user;
 $current_user = wp_get_current_user();
 $user_info = get_userdata($current_user->ID);
@@ -19,6 +22,8 @@ $user_id = $user_info->ID;
 $user_login = $user_info->user_login;
 $edit = "teste";
 $hoje = date('d-m-y');
+
+#fim GLOBAL
 
 // VERIFICAR SE FOI ENVIADO DADOS VIA POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
